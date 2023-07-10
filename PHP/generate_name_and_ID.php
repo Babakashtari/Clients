@@ -5,4 +5,4 @@
 <label for="lastname">
     <input type="text" name="last_name" id="lastname" placeholder="نام خانوادگی">
 </label>
-<button type="submit" value="name">ارسال</button>
+<button type="submit" name="name" value="name">ارسال</button>
