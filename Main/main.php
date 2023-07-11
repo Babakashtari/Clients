@@ -14,7 +14,7 @@ if(isset($_SESSION['initiate']) && $_SESSION['initiate'] == true){
                     if(!empty($user_returned)){
                         require "PHP/generate_destination.php";
                     }elseif(empty($errors)){
-                        require "PHP/generate_name_and_ID.php";
+                        require "PHP/generate_name.php";
                     }else{
                         foreach ($errors as $value){
                             ?>
@@ -24,7 +24,33 @@ if(isset($_SESSION['initiate']) && $_SESSION['initiate'] == true){
                         require "PHP/generate_destination.php";
                     }
                 }elseif(isset($_POST['name'])){
-
+                    require "Backend/get_name.php";
+                    if(!empty($user_returned)){
+                        require "PHP/generate_name.php";
+                    }elseif(empty($errors)){
+                        require "PHP/generate_father_information.php";
+                    }else{
+                        foreach ($errors as $value) {
+                            ?>
+                            <p class="error"><?php echo $value; ?></p>
+                            <?php
+                        }
+                        require "PHP/generate_name.php";
+                    }
+                }elseif(isset($_POST['father_name'])){
+                    require "Backend/get_father_name.php";
+                    if(!empty($user_returned)){
+                        require "PHP/generate_father_information.php";
+                    }elseif(empty($errors)){
+                        require "PHP/generate_mother_information.php";
+                    }else{
+                        foreach ($errors as $value) {
+                            ?>
+                            <p class="error"><?php echo $value; ?></p>
+                            <?php
+                        }
+                        require "PHP/generate_father_information.php";
+                    }
                 }
             ?>
         </form>

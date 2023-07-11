@@ -1,4 +1,4 @@
-    <p>کشور مقصدتان کجاست؟</p>
+    <p class="required">کشور مقصدتان کجاست؟</p>
     <select name="destination_country" id="destination">
         <option value="USA">آمریکا</option>
         <option value="CANADA">کانادا</option>
