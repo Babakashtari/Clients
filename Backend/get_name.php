@@ -1,6 +1,8 @@
 <?php
-    if(empty($_POST['first_name']) && empty($_POST['last_name'])){
+    if($_POST['name'] == "بازگشت به مرحله قبل"){
         array_push($user_returned, "نام خود را واردکنید.");
+    }elseif(empty($_POST['first_name']) && empty($_POST['last_name'])){
+        array_push($errors, "نام و نام خانوادگی اجباری هستند.");
     }elseif(empty($_POST['first_name']) || empty($_POST['last_name'])){
         array_push($errors, "نام و نام خانوادگی هر دو اجباری هستند.");
     }else{

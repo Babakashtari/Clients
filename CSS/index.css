@@ -63,7 +63,7 @@ input[type="submit"] {
 
 button[type="submit"]:hover,
 input[type="submit"]:hover {
-    background-color: gray;
+    background-color: blue;
     color: white;
 }
 

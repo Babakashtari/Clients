@@ -51,6 +51,33 @@ if(isset($_SESSION['initiate']) && $_SESSION['initiate'] == true){
                         }
                         require "PHP/generate_father_information.php";
                     }
+                }elseif(isset($_POST['mother_name'])){
+                    require "Backend/get_mother_name.php";
+                    if(!empty($user_returned)){
+                        require "PHP/generate_mother_information.php";
+                    }elseif(empty($errors)){
+                        require "PHP/generate_immigration_type.php";
+                    }else{
+                        foreach ($errors as $value) {
+                            ?>
+                            <p class="error"><?php echo $value; ?></p>
+                            <?php
+                        }
+                        require "PHP/generate_mother_information.php";
+                    }
+
+                }elseif(isset($_POST['immigration_type'])){
+                    require "Backend/get_immigration_type.php";
+                    if(!empty($user_returned)){
+                        require "PHP/generate_immigration_type.php";
+                    }elseif(!empty($errors)){
+                        foreach ($errors as $value) {
+                            ?>
+                            <p class="error"><?php echo $value; ?></p>
+                            <?php
+                        }
+                        require "PHP/generate_immigration_type.php";
+                    }
                 }
             ?>
         </form>
