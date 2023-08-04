@@ -49,6 +49,18 @@ p.error {
     color: red;
 }
 
+.right {
+    text-align: right;
+}
+
+.block {
+    display: block;
+}
+
+.display_none {
+    display: none;
+}
+
 button[type="submit"],
 input[type="submit"] {
     padding: 0.25rem 0.5rem;
@@ -68,10 +80,14 @@ input[type="submit"]:hover {
 }
 
 select,
-input,
+input:not([type="radio"]),
 button {
     width: 100%;
     margin: 0.25rem 0;
+}
+
+input[type="radio"] {
+    cursor: pointer;
 }
 
 p.required::after {

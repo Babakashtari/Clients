@@ -28,7 +28,7 @@ if(isset($_SESSION['initiate']) && $_SESSION['initiate'] == true){
                     if(!empty($user_returned)){
                         require "PHP/generate_name.php";
                     }elseif(empty($errors)){
-                        require "PHP/generate_father_information.php";
+                        require "PHP/generate_id_numbers.php";
                     }else{
                         foreach ($errors as $value) {
                             ?>
@@ -36,6 +36,20 @@ if(isset($_SESSION['initiate']) && $_SESSION['initiate'] == true){
                             <?php
                         }
                         require "PHP/generate_name.php";
+                    }
+                }elseif(isset($_POST['id_numbers'])){
+                    require "Backend/get_id_numbers.php";
+                    if(!empty($user_returned)){
+                        require "PHP/generate_id_numbers.php";
+                    }elseif(empty($errors)){
+                        require "PHP/generate_father_information.php";
+                    }else{
+                        foreach ($errors as $value) {
+                            ?>
+                            <p class="error"><?php echo $value; ?></p>
+                            <?php
+                        }
+                        require "PHP/generate_id_numbers.php";
                     }
                 }elseif(isset($_POST['father_name'])){
                     require "Backend/get_father_name.php";
