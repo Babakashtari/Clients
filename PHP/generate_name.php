@@ -9,4 +9,18 @@
        echo $last_name = $data_clean_up->test_input($regular_expressions['last_name'], $_POST['last_name']);
     } ?>">
 </label>
+<label for="gender">
+    <select name="gender" id="gender">
+        <option value="">جنسیت</option>
+        <option value="male">مذکر</option>
+        <option value="female">مونث</option>
+    </select>
+</label>
+<label for="marital_status">
+    <select name="marital_status" id="marital_status">
+        <option value="">وضعیت تاهل</option>
+        <option value="single">مجرد</option>
+        <option value="married">متاهل</option>
+    </select>
+</label>
 <button type="submit" name="name" value="name">ارسال</button>

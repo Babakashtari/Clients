@@ -9,6 +9,8 @@ $regular_expressions=[
     "birth_certificate_number" => '/^\d+$/',
     "alive" => '/^(YES|NO)$/',
     "date" => '/^(1[8-9][0-9]{2}|20[0-9]{2})\-(0?[1-9]|1[0-2])\-(0?[1-9]|[1-2][0-9]|3[0-1])$/',
-    "place" => '/^[a-zA-Z]+$/'
+    "place" => '/^[a-zA-Z]+$/',
+    "gender" => '/^(male|female)$/',
+    "marital_status" => '/^(single|married)$/'
 ];
 ?>

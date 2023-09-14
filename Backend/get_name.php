@@ -18,5 +18,17 @@
         }else{
             array_push($errors, "نام فامیلی فقط می تواند حروف کوچک و بزرگ انگلیسی باشد.");
         }
+        $gender = $data_clean_up->test_input($regular_expressions['gender'], $_POST['gender']);
+        if(empty($gender)){
+            array_push($errors, "جنسیت خود را انتخاب کنید.");
+        }else{
+            $_SESSION['gender'] = $gender;
+        }
+        $marital_status = $data_clean_up->test_input($regular_expressions['marital_status'], $_POST['marital_status']);
+        if(empty($marital_status)){
+            array_push($errors, "وضعیت تاهلتان راانتخاب کنید.");
+        }else{
+            $_SESSION['marital_status'] = $marital_status;
+        }
     }
 ?>
