@@ -1,6 +1,9 @@
 var radios = document.getElementsByClassName('revealers');
 var additional_info_div = document.getElementsByClassName('to_reveal');
 
+console.log(radios);
+console.log(additional_info_div);
+
 for (var i = 0; i < radios.length; i++) {
     radios[i].addEventListener('change', (event) => {
         var element = event.target;

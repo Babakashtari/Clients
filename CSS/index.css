@@ -80,13 +80,14 @@ input[type="submit"]:hover {
 }
 
 select,
-input:not([type="radio"]),
+input:not([type="radio"], [type="checkbox"]),
 button {
     width: 100%;
     margin: 0.25rem 0;
 }
 
-input[type="radio"] {
+input[type="radio"],
+input[type="checkbox"] {
     cursor: pointer;
 }
 
@@ -96,6 +97,10 @@ p.required::after {
     position: relative;
     top: -5px;
     right: 2px;
+}
+
+.full_width {
+    width: 100%;
 }
 
 @media screen and (max-width:600px) {
